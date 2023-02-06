@@ -4,6 +4,8 @@ print(total_price(28,89))
 print(total_price('28', '89'))
 
 '''
+First chapt about typ hints, Mypy is a static type checker for Python!
+
 (venv) PS C:\lab\tutorial-fast-api\project\prerequisites> mypy .\typehints.py
 typehints.py:4: error: Argument 1 to "total_price" has incompatible type "str"; expected "int"
 typehints.py:4: error: Argument 2 to "total_price" has incompatible type "str"; expected "int"
