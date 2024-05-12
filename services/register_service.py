@@ -1,9 +1,15 @@
 import re
 import asyncpg
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+database_url = os.getenv("DATABASE_URL")
 
 
 async def connect_to_postgres():
-    return await asyncpg.connect("postgresql://postgres:123456@localhost/postgres")
+    return await asyncpg.connect(f"{database_url}")
 
 
 async def create_register(new_register):
