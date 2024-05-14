@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from models.register import Register
-from services.register_service import create_register
+from services.create_register_service import create_register
 
 
 router = APIRouter()
