@@ -15,7 +15,7 @@ async def connect_to_postgres():
 async def get_registers():
     conn = await connect_to_postgres()
     try:
-        registers = await conn.fetch("SELECT * FROM REGISTER")
+        registers = await conn.fetch("SELECT * FROM register")
     finally:
         await conn.close()
     return registers
