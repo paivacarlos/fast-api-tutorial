@@ -2,6 +2,7 @@ import re
 import asyncpg
 from dotenv import load_dotenv
 import os
+import json
 
 
 load_dotenv()
@@ -15,7 +16,9 @@ async def connect_to_postgres():
 async def get_registers():
     conn = await connect_to_postgres()
     try:
-        registers = await conn.fetch("SELECT * FROM register")
+        registers_from_db = await conn.fetch("SELECT * FROM register")
+        registers = [dict(register) for register in registers_from_db]
     finally:
         await conn.close()
-    return registers
+    data = registers
+    return data
