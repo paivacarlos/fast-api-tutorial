@@ -18,7 +18,6 @@ async def get_register(id_of_register):
     try:
         register_from_db = await conn.fetchrow("SELECT * FROM register WHERE id = $1", id_of_register)
         register = register_from_db
-        print(register)
         if register is not None:
             return dict(register)
         else:
