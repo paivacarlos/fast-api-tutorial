@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models.register import Register
+from models.registerModels import Register
 from services.createRegisterService import create_register
 
 
