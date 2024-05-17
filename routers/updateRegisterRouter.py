@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from services.updateRegisterService import update_register
-from services.get_register_by_id import get_register
-from models.register import Register
+from services.getRegisterByIdService import get_register
+from models.registerModels import Register
 
 router = APIRouter()
 
