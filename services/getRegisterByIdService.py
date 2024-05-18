@@ -1,17 +1,16 @@
 import re
 import json
 from database.connection import connect_to_postgres
+from database.register.getRegisterByIdQuery import get_register_by_id_query
 
 
-async def get_register(id_of_register):
+async def get_register(register_id):
     conn = await connect_to_postgres()
     try:
-        register_from_db = await conn.fetchrow("SELECT * FROM register WHERE id = $1", id_of_register)
-        register = register_from_db
-        if register is not None:
-            return dict(register)
+        register_from_db = await get_register_by_id_query(conn, register_id)
+        if register_from_db is not None:
+            return dict(register_from_db)
         else:
-            register = None
-            return register
+            return None
     finally:
         await conn.close()

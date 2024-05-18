@@ -7,6 +7,7 @@ router = APIRouter()
 @router.get("/register/{register_id}", status_code=200)
 async def get_register_by_id(register_id: int):
     register = await get_register(register_id)
+    print("aqui: ", register)
     if register is not None:
         return register
     else:
