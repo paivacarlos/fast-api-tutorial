@@ -1,10 +1,11 @@
 import re
 from database.connection import connect_to_postgres
 from database.register.createRegisterQuery import create_register_query
+from .utils.formatterPhoneUtils import formatter_Phone
 
 
 async def create_register(new_register):
-    new_register.phone = re.sub(r'\D', '', new_register.phone)
+    new_register.phone = await formatter_Phone(new_register.phone)
     # Conexão ao banco de dados PostgreSQL
     conn = await connect_to_postgres()
 
