@@ -21,16 +21,20 @@ def create_register_to_delete():
     return data["id"]
 
 
-@pytest.mark.skip(reason="Found bug-fix and already reported")
 def test_create_register_with_success(create_register_to_delete):
-    resource = "/delete-register"
+    resource = "/delete-register/"
     id_to_delete = create_register_to_delete
-    id_register_to_delete = id_to_delete
+    print(id_to_delete)
+    id_register_to_delete = str(id_to_delete)
     url = BASE_URL + resource + id_register_to_delete
+    print(url)
 
     response = requests.delete(
         url
     )
 
-    assert response.status_code == 201
-    assert data["message"] == should_message_to_response
+    message_that_should_come_in_the_response = "Register deleted with success"
+    data = response.json()
+
+    assert response.status_code == 200
+    assert data["message"] == message_that_should_come_in_the_response 
