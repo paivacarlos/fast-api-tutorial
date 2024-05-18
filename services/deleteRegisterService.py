@@ -1,6 +1,7 @@
 import re
 import json
 from database.connection import connect_to_postgres
+from database.register.deleteRegisterQuery import delete_register_query
 
 
 async def delete_register_by_id(register_id):
@@ -12,7 +13,7 @@ async def delete_register_by_id(register_id):
             return {"success": False, "message": "Register not found"}
 
         # Deletar o registro
-        await conn.execute("DELETE FROM register WHERE id = $1", register_id)
+        await delete_register_query(conn, register_id)
         return {"success": True, "message": "Register deleted with success"}
     finally:
         await conn.close()
