@@ -1,7 +1,4 @@
 import re
-import asyncpg
-from dotenv import load_dotenv
-import os
 from database.connection import connect_to_postgres
 
 
