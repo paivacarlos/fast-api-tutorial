@@ -1,16 +1,6 @@
 import re
-import asyncpg
-from dotenv import load_dotenv
-import os
 import json
-
-
-load_dotenv()
-database_url = os.getenv("DATABASE_URL")
-
-
-async def connect_to_postgres():
-    return await asyncpg.connect(f"{database_url}")
+from database.connection import connect_to_postgres
 
 
 async def delete_register_by_id(register_id):
