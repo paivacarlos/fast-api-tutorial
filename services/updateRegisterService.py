@@ -1,19 +1,13 @@
 import re
 import json
 from database.connection import connect_to_postgres
+from database.register.updateRegisterQuery import update_register_query
 
 
 async def update_register(register_id, new_register_data):
     conn = await connect_to_postgres()
     try:
-        await conn.execute(
-            "UPDATE register SET name = $1, cpf = $2, address = $3, phone = $4 WHERE id = $5",
-            new_register_data.name,
-            new_register_data.cpf,
-            new_register_data.address,
-            new_register_data.phone,
-            register_id,
-        )
+        await update_register_query(conn, register_id, new_register_data)
         return {"message": "Register updated successfully"}
     finally:
         await conn.close()
