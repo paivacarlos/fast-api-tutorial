@@ -11,7 +11,7 @@ def test_health_check_server_is_online():
     response = requests.get(BASE_URL + resource)
 
     data = response.json()
-    messagem_that_should_come_in_the_response = "We are online! ;)"
+    message_that_should_come_in_the_response = "We are online! ;)"
 
     assert response.status_code == 200
     assert data["message"] == messagem_that_should_come_in_the_response

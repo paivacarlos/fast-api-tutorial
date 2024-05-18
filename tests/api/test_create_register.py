@@ -15,7 +15,7 @@ def test_create_register_with_success():
         url,
         json=body
     )
-    should_message_to_response = "Register created with success!"
+    message_that_should_come_in_the_response = "Register created with success!"
     data = response.json()
     assert response.status_code == 201
     assert data["message"] == should_message_to_response
