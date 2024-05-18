@@ -37,4 +37,4 @@ def test_create_register_with_success(create_register_to_delete):
     data = response.json()
 
     assert response.status_code == 200
-    assert data["message"] == message_that_should_come_in_the_response 
+    assert data["message"] == message_that_should_come_in_the_response
