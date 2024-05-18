@@ -10,9 +10,10 @@ async def create_register(new_register):
 
     try:
         # Executa a consulta SQL para inserir os dados na tabela
-        await create_register_query(conn, new_register)
+        new_register_id = await create_register_query(conn, new_register)
     finally:
         # Fecha a conexão com o banco de dados
         await conn.close()
 
-    return {"message": "Register created with success!"}
+    return {"message": "Register created with success!",
+            "id": new_register_id}
