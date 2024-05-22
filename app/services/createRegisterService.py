@@ -1,7 +1,6 @@
-import re
 from fastapi import HTTPException
-from database.connection import connect_to_postgres
-from database.register.createRegisterQuery import create_register_query
+from app.database.connection import connect_to_postgres
+from app.database.register.createRegisterQuery import create_register_query
 from .utils.formatterPhoneUtils import formatter_Phone
 from .utils.cpfValidatorUtils import validate_cpf
 

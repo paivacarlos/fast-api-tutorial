@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from services.getRegisterByIdService import get_register
+from app.services.getRegisterByIdService import get_register
 
 router = APIRouter()
 

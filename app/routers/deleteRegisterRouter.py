@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from services.deleteRegisterService import delete_register_by_id
+from app.services.deleteRegisterService import delete_register_by_id
 
 router = APIRouter()
 
