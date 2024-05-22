@@ -1,7 +1,5 @@
-import re
-import json
-from database.connection import connect_to_postgres
-from database.register.updateRegisterQuery import update_register_query
+from app.database.connection import connect_to_postgres
+from app.database.register.updateRegisterQuery import update_register_query
 from .utils.formatterPhoneUtils import formatter_Phone
 
 

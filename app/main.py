@@ -1,10 +1,6 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from routers import createRegisterRouter
-from routers import getAllRegistersRouter
-from routers import getRegisterByIdRouter
-from routers import updateRegisterRouter
-from routers import deleteRegisterRouter
+from app.routers import createRegisterRouter, getRegisterByIdRouter, deleteRegisterRouter, updateRegisterRouter
+from app.routers import getAllRegistersRouter
 
 app = FastAPI()
 

@@ -1,8 +1,6 @@
-import re
-import json
-from database.connection import connect_to_postgres
-from database.register.getRegisterByIdQuery import get_register_by_id_query
-from database.register.deleteRegisterQuery import delete_register_query
+from app.database.connection import connect_to_postgres
+from app.database.register.getRegisterByIdQuery import get_register_by_id_query
+from app.database.register.deleteRegisterQuery import delete_register_query
 
 
 async def delete_register_by_id(register_id):

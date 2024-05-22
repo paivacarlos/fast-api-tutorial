@@ -1,6 +1,4 @@
-import re
-import json
-from database.connection import connect_to_postgres
+from app.database.connection import connect_to_postgres
 
 
 async def get_registers():

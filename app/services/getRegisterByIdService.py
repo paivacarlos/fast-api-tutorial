@@ -1,7 +1,5 @@
-import re
-import json
-from database.connection import connect_to_postgres
-from database.register.getRegisterByIdQuery import get_register_by_id_query
+from app.database.connection import connect_to_postgres
+from app.database.register.getRegisterByIdQuery import get_register_by_id_query
 
 
 async def get_register(register_id):
