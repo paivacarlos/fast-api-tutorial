@@ -1,4 +1,4 @@
-# Meu Projeto FastAPI
+# My project FastAPI
 
 This project is a RESTful API built with FastAPI and PostgreSQL. It includes CRUD operations for managing registers, along with data validation and error handling. The API supports creating, reading, updating, and deleting register entries.
 
